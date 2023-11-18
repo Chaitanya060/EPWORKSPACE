@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+<title>JSF Application</title>
+</h:head>
+
+<h:body>
+
+<h2 align="center">JSF CRUD Operations</h2><hr color="black"/><hr color="black"/>
+<h:form>
+<h:commandLink action="index" value="Home" />&nbsp;&nbsp;&nbsp;
+<h:commandLink action="empreg" value="Employee Registration" />&#160;&#160;&#160;
+<h:commandLink action="updateemp" value="Update Employee" />&#160;&#160;&#160;
+<h:commandLink action="viewallemps" value="View all Employees" />&#160;&#160;&#160;
+<h:commandLink action="emplogin" value="emplogin" />&#160;&#160;&#160;
+</h:form>
+
+<br /><br />
+<h2 align="center">View All Employees</h2>
+<center>
+<h:dataTable value="#{empbean.emplist}" var="emp" border="2" bgcolor="yellow">
+
+<h:column>
+<f:facet name="header">ID</f:facet>
+#{emp.id}
+</h:column>
+
+<h:column>
+<f:facet name="header">NAME</f:facet>
+#{emp.name}
+</h:column>
+
+<h:column>
+<f:facet name="header">GENDER</f:facet>
+#{emp.gender}
+</h:column>
+
+<h:column>
+<f:facet name="header">DATE OF JOINING</f:facet>
+#{emp.dateofjoining}
+</h:column>
+
+<h:column>
+<f:facet name="header">DEPARTMENT</f:facet>
+#{emp.department}
+</h:column>
+
+<h:column>
+<f:facet name="header">SALARY</f:facet>
+#{emp.salary}
+</h:column>
+
+<h:column>
+<f:facet name="header">EMAIL ID</f:facet>
+#{emp.email}
+</h:column>
+
+<h:column>
+<f:facet name="header">CONTACT NO</f:facet>
+#{emp.contactno}
+</h:column>
+<h:column>
+<f:facet name="header">Action</f:facet>
+<h:form>
+<h:commandLink action="#{empbean.deleteemp(emp.id)}" value="Delecte" />
+</h:form>
+
+</h:column>
+</h:dataTable>
+</center>
+</h:body>
+	
+</html>

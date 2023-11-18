@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Tourists</title>
+</h:head>
+
+<h:body>
+
+    <h:form>
+        <p:dataTable id="dataTable" value="#{touristBean.tourists}" var="tourist">
+            <p:column headerText="ID">
+                <h:outputText value="#{tourist.id}" />
+            </p:column>
+            <p:column headerText="Name">
+                <h:outputText value="#{tourist.name}" />
+            </p:column>
+            <p:column headerText="City">
+                <h:outputText value="#{tourist.city}" />
+            </p:column>
+            <p:column headerText="Phone">
+                <h:outputText value="#{tourist.phone}" />
+            </p:column>
+        </p:dataTable>
+    </h:form>
+
+</h:body>
+
+</html>

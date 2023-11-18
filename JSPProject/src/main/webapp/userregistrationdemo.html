@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EP</title>
+</head>
+<body bgcolor="lightgrey">
+<h1 align="center">JSP Web Application</h1>
+<hr color="black"><hr color="black"><br>
+<a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;
+<a href="userregistrationdemo.html">User Registration</a>&nbsp;&nbsp;&nbsp;
+<a href="userlogin.html">User Login</a>&nbsp;&nbsp;&nbsp;
+<a href="viewusers.jsp">view users</a>&nbsp;&nbsp;&nbsp;
+<br><br>
+<h2 align="center"><u>User Registration</u></h2>
+<form method = "post" action = "insertuser.jsp">
+<table align="center">
+<tr>
+    <td><b>Full Name</b></td>
+    <td>
+        <input type="text" name="name" required>
+    </td>
+</tr>
+<tr><td></td></tr>
+<tr>
+    <td><b>Select Gender</b></td>
+    <td>
+        Male<input type="radio" name="gender" value="male" required>
+        Female<input type="radio" name="gender" value="female" required>
+    </td>
+</tr>
+<tr><td></td></tr>
+<tr>
+    <td><b>Date Of Birth</b></td>
+    <td>
+        <input type="date" name="dob" required>
+    </td>
+</tr>
+<tr><td></td></tr>
+<tr>
+    <td><b>Marital Status</b></td>
+    <td>
+      <select name="mstatus" required>
+      <option value="">---Select---</option>
+      <option value="single">Single</option>
+      <option value="married">Married</option>
+      </select>
+    </td>
+</tr>
+<tr><td></td></tr>
+<tr>
+    <td><b>Email ID</b></td>
+    <td>
+        <input type="email" name="email" required>
+    </td>
+</tr>
+<tr><td></td></tr>
+<tr>
+    <td><b>Password</b></td>
+    <td>
+        <input type="password" name="pwd" required>
+    </td>
+</tr>
+<tr><td></td></tr>
+<tr>
+    <td><b>Contact No</b></td>
+    <td>
+        <input type="number" name="contactno" required>
+    </td>
+</tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr align="center">
+    <td>
+        <input type="submit" value="Register" required>
+    </td>
+    <td>
+        <input type="reset" value="Clear" required>
+    </td>
+</tr>
+</table>
+
+</body>
+</html>

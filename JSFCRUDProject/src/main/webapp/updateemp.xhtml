@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+<title>JSF Application</title>
+</h:head>
+
+<h:body>
+
+<h2 align="center">JSF CRUD Operations with JPA</h2> <hr color="black"/><hr color="black"/>
+
+<a href="index.jsf">Home</a>&nbsp;&nbsp;&nbsp;
+<a href="empreg.jsf">Employee Registration</a>&nbsp;&nbsp;&nbsp;
+<a href="updateemp.jsf">Update Employee</a>&nbsp;&nbsp;&nbsp;
+<a href="viewallemps.jsf">View All Employees</a>&nbsp;&nbsp;&nbsp;
+<a href="emplogin.jsf">Employee Login</a>&nbsp;&nbsp;&nbsp;
+
+<br/><br/>
+<h2 align="center">Update Employee</h2>
+<center>
+
+<h:form>
+
+<h:panelGrid columns="2">
+<h:outputLabel value="Employee ID" />
+<h:inputText value="#{empbean.id}"   id="eid" validatorMessage="ID is Compulsory">
+<f:validateRequired></f:validateRequired>
+</h:inputText>
+<h:message for="eid"  style="color:red"/>
+</h:panelGrid>
+
+<h:panelGrid columns="3">
+<h:outputLabel value="Employee Salary" />
+<h:inputText value="#{empbean.salary}"     id="esal" validatorMessage="Salary should be in between 20000 and 60000">
+<f:validateDoubleRange minimum="20000.0"  maximum="60000.0"/>
+</h:inputText>
+<h:message for="esal"/>
+</h:panelGrid>
+
+<h:panelGrid columns="3">
+<h:outputLabel value="Employee Password" />
+<h:inputSecret value="#{empbean.password}"   id="epwd"  validatorMessage="Password Should follow Pattern">
+<f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"></f:validateRegex>
+</h:inputSecret>
+<h:message for="epwd"/>
+</h:panelGrid>
+
+<h:panelGrid columns="3">
+<h:outputLabel value="Contact Number" />
+<h:inputText value="#{empbean.contactno}"  id="econtact"  validatorMessage="Contact Number MUST contains 10 digits">
+<f:validateRegex pattern="^\d{10}$"></f:validateRegex>
+</h:inputText>
+<h:message for="econtact"/>
+</h:panelGrid>
+
+
+<br/>
+
+<h:commandButton action="#{empbean.updateemp()}" value="Update Employee" />
+
+</h:form>
+
+</center>
+</h:body>
+
+
+</html>

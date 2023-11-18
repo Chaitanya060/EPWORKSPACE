@@ -1,0 +1,119 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<web-app>
+
+<welcome-file-list>
+<welcome-file>index.html</welcome-file>
+
+</welcome-file-list>
+
+<context-param>
+<param-name>uname</param-name>
+<param-value>klu</param-value>
+</context-param>
+
+<context-param>
+<param-name>password</param-name>
+<param-value>klu@123</param-value>
+</context-param>
+
+  <servlet>
+  <servlet-name>firstservlet</servlet-name>
+  <servlet-class>lifecycle.FirstServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>secondservlet</servlet-name>
+    <servlet-class>lifecycle.SecondServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>thirdservlet</servlet-name>
+    <servlet-class>lifecycle.ThirdServlet</servlet-class>
+  </servlet>
+  <servlet>
+  
+  <init-param>
+  <param-name>id</param-name>
+  <param-value>100</param-value>
+  </init-param>
+  
+  <init-param>
+  <param-name>name</param-name>
+  <param-value>KLEF</param-value>
+  </init-param>
+
+    <servlet-name>demoservlet1</servlet-name>
+    <servlet-class>parametersdemo.DemoServlet1</servlet-class>
+  </servlet>
+  <servlet>
+  
+  <init-param>
+  <param-name>dept</param-name>
+  <param-value>CSE</param-value>
+  </init-param>
+  
+  <init-param>
+  <param-name>course</param-name>
+  <param-value>Enterprise Programming</param-value>
+  </init-param>
+  
+    <servlet-name>demoservlet2</servlet-name>
+    <servlet-class>parametersdemo.DemoServlet2</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>demoservlet</servlet-name>
+  	<servlet-class>servletcollaborationdemo.DemoServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DisplayServlet</servlet-name>
+  	
+  	<servlet-class>webappdemo.DisplayServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>InsertEmpServlet</servlet-name>
+  	<display-name>InsertEmpServlet</display-name>
+  	<description></description>
+  	<servlet-class>webappdemo.InsertEmpServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ViewAllEmployeesServlet</servlet-name>
+  	<display-name>ViewAllEmployeesServlet</display-name>
+  	<description></description>
+  	<servlet-class>webappdemo.ViewAllEmployeesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>firstservlet</servlet-name>
+  <url-pattern>first</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>secondservlet</servlet-name>
+    <url-pattern>second</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>thirdservlet</servlet-name>
+    <url-pattern>third</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>demoservlet1</servlet-name>
+    <url-pattern>demo1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>demoservlet2</servlet-name>
+    <url-pattern>demo2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>demoservlet</servlet-name>
+  	<url-pattern>demo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DisplayServlet</servlet-name>
+  	<url-pattern>display</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>InsertEmpServlet</servlet-name>
+  	<url-pattern>insertemp</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ViewAllEmployeesServlet</servlet-name>
+  	<url-pattern>viewemps</url-pattern>
+  </servlet-mapping>
+</web-app>

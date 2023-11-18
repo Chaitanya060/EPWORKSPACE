@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+<title>JSF Application</title>
+</h:head>
+
+<h:body>
+
+<h2 align="center">JSF CRUD Operations with JPA</h2> <hr color="black"/><hr color="black"/>
+
+<a href="index.jsf">Home</a>&nbsp;&nbsp;&nbsp;
+<a href="empreg.jsf">Employee Registration</a>&nbsp;&nbsp;&nbsp;
+<a href="updateemp.jsf">Update Employee</a>&nbsp;&nbsp;&nbsp;
+<a href="viewallemps.jsf">View All Employees</a>&nbsp;&nbsp;&nbsp;
+<a href="emplogin.jsf">Employee Login</a>&nbsp;&nbsp;&nbsp;
+
+<br/><br/>
+<h2 align="center">Employee Login</h2>
+<center>
+
+<h:form>
+
+<h:panelGrid columns="3">
+<h:outputLabel value="Enter Email ID"/>
+<h:inputText value="#{empbean.email}"  id="email"   validatorMessage="Email must follow pattern">
+<f:validateRegex pattern="^[a-zA-Z0-9._%+-]+@(gmail|yahoo|reddit)\.(in|com)$"></f:validateRegex>
+</h:inputText>
+<h:message for="email"/>
+</h:panelGrid>
+
+<h:panelGrid columns="3">
+<h:outputLabel value="Employee Password" />
+<h:inputSecret value="#{empbean.password}"   id="epwd"  validatorMessage="Password Should follow Pattern">
+<f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"></f:validateRegex>
+</h:inputSecret>
+<h:message for="epwd"/>
+</h:panelGrid>
+
+
+
+<br/>
+
+<h:commandButton action="#{empbean.emplogin()}" value="Login" />
+
+</h:form>
+
+</center>
+</h:body>
+
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+<title>JSF Application</title>
+</h:head>
+
+<h:body>
+
+<h2 align="center">JSF CRUD Operations</h2><hr color="black"/><hr color="black"/>
+<h:form>
+<h:commandLink action="index" value="Home" />&nbsp;&nbsp;&nbsp;
+<h:commandLink action="empreg" value="Employee Registration" />&#160;&#160;&#160;
+<h:commandLink action="updateemp" value="Update Employee" />&#160;&#160;&#160;
+<h:commandLink action="viewallemps" value="View all Employees" />&#160;&#160;&#160;
+<h:commandLink action="emplogin" value="emplogin" />&#160;&#160;&#160;
+</h:form>
+
+<br /><br/>
+
+<h3 align="center">Employee Registration</h3>
+<center>
+<h:form>
+<h:panelGrid columns="3">
+<h:outputLabel value="Employee ID" />
+<h:inputText value="#{empbean.id}" />
+</h:panelGrid>
+
+<h:panelGrid columns="2">
+<h:outputLabel value="Employee Name" />
+<h:inputText value="#{empbean.name}" />
+</h:panelGrid>
+
+<h:panelGrid columns="2">
+<h:outputLabel value="Select Gender" />
+<h:selectOneRadio value="#{empbean.gender}">
+<f:selectItem itemLabel="MALE" itemValue="male"/>
+<f:selectItem itemLabel="FEMALE" itemValue="female"/>
+<f:selectItem itemLabel="OTHERS" itemValue="others"/>
+</h:selectOneRadio>
+</h:panelGrid>
+
+<h:panelGrid columns="2">
+<h:outputLabel value="Date of Joining" />
+<h:inputText value="#{empbean.dateofjoining}" />
+</h:panelGrid>
+
+<h:panelGrid columns="2">
+<h:outputLabel value="Salary" />
+<h:inputText value="#{empbean.salary}" />
+</h:panelGrid>
+
+<h:panelGrid columns="2">
+<h:outputLabel value="Department" />
+<h:selectOneMenu value="#{empbean.department}">
+<f:selectItem itemLabel="SALES" itemValue="sales"/>
+<f:selectItem itemLabel="TECHNICAL" itemValue="technical"/>
+<f:selectItem itemLabel="MARKETING" itemValue="marketing"/>
+</h:selectOneMenu>
+</h:panelGrid>
+
+<h:panelGrid columns="2">
+<h:outputLabel value="Email ID" />
+<h:inputText value="#{empbean.email}" />
+</h:panelGrid>
+
+<h:panelGrid columns="2">
+<h:outputLabel value="Password" />
+<h:inputSecret value="#{empbean.password}" />
+</h:panelGrid>
+
+<h:panelGrid columns="2">
+<h:outputLabel value="Contact No" />
+<h:inputText value="#{empbean.contactno}" />
+</h:panelGrid>
+
+<h:commandButton action="#{empbean.addemp()}" value="Add Employee" />
+
+</h:form>
+</center>
+</h:body>
+	
+</html>
